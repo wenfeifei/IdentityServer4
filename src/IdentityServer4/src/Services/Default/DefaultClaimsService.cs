@@ -81,7 +81,7 @@ namespace IdentityServer4.Services
                     IdentityServerConstants.ProfileDataCallers.ClaimsProviderIdentityToken,
                     additionalClaimTypes)
                 {
-                    RequestedResources = request.ValidatedResources,
+                    RequestedResources = resources,
                     ValidatedRequest = request
                 };
 
@@ -102,7 +102,7 @@ namespace IdentityServer4.Services
         }
 
         /// <summary>
-        /// Returns claims for an identity token.
+        /// Returns claims for an access token.
         /// </summary>
         /// <param name="subject">The subject.</param>
         /// <param name="resourceResult">The validated resource result</param>

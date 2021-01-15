@@ -113,6 +113,7 @@ Loading the resource and client definitions happens in `Startup.cs <https://gith
     public void ConfigureServices(IServiceCollection services)
     {
         var builder = services.AddIdentityServer()
+            .AddDeveloperSigningCredential()        //This is for dev only scenarios when you don’t have a certificate to use.
             .AddInMemoryApiScopes(Config.ApiScopes)
             .AddInMemoryClients(Config.Clients);
 
@@ -164,7 +165,7 @@ This controller will be used later to test the authorization requirement, as wel
 
 Adding a Nuget Dependency
 -------------------------
-In order for the configuration step to work the nuget package dependency has to be added, run this command in the root directory.
+In order for the configuration step to work the nuget package dependency has to be added, run this command in the root directory::
 
     dotnet add .\\src\\api\\Api.csproj package Microsoft.AspNetCore.Authentication.JwtBearer
 

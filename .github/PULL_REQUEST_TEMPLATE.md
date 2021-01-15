@@ -1,3 +1,5 @@
+**At this point we cannot accept PRs for new features, only bugfixes. Thanks!**
+
 **What issue does this PR address?**
 
 
